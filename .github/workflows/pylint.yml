@@ -3,10 +3,11 @@ name: Pylint
 on: [push]
 
 jobs:
+  ccontinue-on-error: ${{ matrix.experimental }}
   build:
 
     runs-on: ubuntu-latest
-
+  
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9

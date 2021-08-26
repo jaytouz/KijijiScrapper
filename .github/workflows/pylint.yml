@@ -3,7 +3,7 @@ name: Pylint
 on: [push]
 
 jobs:
-  ccontinue-on-error: ${{ matrix.experimental }}
+  continue-on-error: ${{ matrix.experimental }}
   build:
 
     runs-on: ubuntu-latest

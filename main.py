@@ -1,16 +1,14 @@
-# This is a sample Python script.
+from kijiji_scrapper import KijijiUrlIterator, ApartmentsPageIterator
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+url = 'https://www.kijiji.ca/b-appartement-condo/ville-de-montreal/c37l1700281'
+pages = KijijiUrlIterator(url)
+print(pages.page, pages.max_page)
 
+for page in pages:
+    print(page)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+page = ApartmentsPageIterator(url)
+for item in page:
+    print(item.price)
+print(page.rss_url)
+print()
